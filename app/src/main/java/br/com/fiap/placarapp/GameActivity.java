@@ -20,6 +20,7 @@ public class GameActivity extends AppCompatActivity {
         tvTimeVisitante = (TextView) findViewById(R.id.tvTimeVisitante);
 
         if(getIntent() != null) {
+
             timeCasa = getIntent().getStringExtra("TIMECASA");
             timeVisitante = getIntent().getStringExtra("TIMEVISITANTE");
 
