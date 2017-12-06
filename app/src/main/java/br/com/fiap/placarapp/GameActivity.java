@@ -20,11 +20,13 @@ public class GameActivity extends AppCompatActivity {
     private TextView tvTimeCasaPlacar;
 
 
-    private Button golVisitante;
+    private Button btnGolVisitante;
 
-    private Button golCasa;
+    private Button btnGolCasa;
 
+    private Integer placarCasa;
 
+    private Integer placarVisitante;
 
 
     @Override
@@ -35,15 +37,31 @@ public class GameActivity extends AppCompatActivity {
         tvTimeCasa = (TextView) findViewById(R.id.tvTimeCasa);
         tvTimeVisitante = (TextView) findViewById(R.id.tvTimeVisitante);
 
-        if(getIntent() != null) {
+        if (getIntent() != null) {
 
             timeCasa = getIntent().getStringExtra("TIMECASA");
             timeVisitante = getIntent().getStringExtra("TIMEVISITANTE");
 
             tvTimeCasa.setText(timeCasa);
             tvTimeVisitante.setText(timeVisitante);
+
         }
     }
 
+    public void golCasa(View v) {
 
+        this.tvTimeCasaPlacar = (TextView) findViewById(R.id.tvTimeCasaPlacar);
+        this.placarCasa = Integer.parseInt(tvTimeCasaPlacar.getText().toString()) + 1;
+        this.tvTimeCasaPlacar.setText(this.placarCasa.toString());
+
+
+    }
+
+    public void golVisitante(View v) {
+
+        this.tvTimeVisitantePlacar = (TextView) findViewById(R.id.tvTimeVisitantePlacar);
+        this.placarVisitante = Integer.parseInt(tvTimeVisitantePlacar.getText().toString()) + 1;
+        this.tvTimeVisitantePlacar.setText(this.placarVisitante.toString());
+
+    }
 }
