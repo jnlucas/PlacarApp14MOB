@@ -11,19 +11,16 @@ import android.view.View;
 public class GameActivity extends AppCompatActivity {
 
     private String timeCasa;
+
     private String timeVisitante;
 
     private TextView tvTimeCasa;
+
     private TextView tvTimeVisitante;
 
     private TextView tvTimeVisitantePlacar;
 
     private TextView tvTimeCasaPlacar;
-
-
-    private Button btnGolVisitante;
-
-    private Button btnGolCasa;
 
     private Integer placarCasa;
 
@@ -43,16 +40,14 @@ public class GameActivity extends AppCompatActivity {
 
 
         if (getIntent() != null) {
-
             timeCasa = getIntent().getStringExtra("TIMECASA");
             timeVisitante = getIntent().getStringExtra("TIMEVISITANTE");
 
             tvTimeCasa.setText(timeCasa);
             tvTimeVisitante.setText(timeVisitante);
-
         }
 
-        if(savedInstanceState != null){
+        if (savedInstanceState != null) {
             placarCasa = savedInstanceState.getInt("GOLCASA");
             placarVisitante = savedInstanceState.getInt("GOLVISITANTE");
 
@@ -83,7 +78,7 @@ public class GameActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        outState.putInt("GOLCASA",placarCasa);
-        outState.putInt("GOLVISITANTE",placarVisitante);
+        outState.putInt("GOLCASA", placarCasa);
+        outState.putInt("GOLVISITANTE", placarVisitante);
     }
 }
