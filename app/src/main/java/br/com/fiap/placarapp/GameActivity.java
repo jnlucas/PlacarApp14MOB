@@ -1,5 +1,6 @@
 package br.com.fiap.placarapp;
 
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -37,6 +38,10 @@ public class GameActivity extends AppCompatActivity {
         tvTimeCasa = (TextView) findViewById(R.id.tvTimeCasa);
         tvTimeVisitante = (TextView) findViewById(R.id.tvTimeVisitante);
 
+        tvTimeCasaPlacar = (TextView) findViewById(R.id.tvTimeCasaPlacar);
+        tvTimeVisitantePlacar = (TextView) findViewById(R.id.tvTimeVisitantePlacar);
+
+
         if (getIntent() != null) {
 
             timeCasa = getIntent().getStringExtra("TIMECASA");
@@ -46,6 +51,15 @@ public class GameActivity extends AppCompatActivity {
             tvTimeVisitante.setText(timeVisitante);
 
         }
+
+        if(savedInstanceState != null){
+            placarCasa = savedInstanceState.getInt("GOLCASA");
+            placarVisitante = savedInstanceState.getInt("GOLVISITANTE");
+
+            tvTimeCasaPlacar.setText(String.valueOf(placarCasa));
+            tvTimeVisitantePlacar.setText(String.valueOf(placarVisitante));
+        }
+
     }
 
     public void golCasa(View v) {
@@ -63,5 +77,13 @@ public class GameActivity extends AppCompatActivity {
         this.placarVisitante = Integer.parseInt(tvTimeVisitantePlacar.getText().toString()) + 1;
         this.tvTimeVisitantePlacar.setText(this.placarVisitante.toString());
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("GOLCASA",placarCasa);
+        outState.putInt("GOLVISITANTE",placarVisitante);
     }
 }
