@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PlacarApp</string>
+    <string name="erro_casa">Write a Home Team</string>
+    <string name="erro_visitante">Write a Team visiting</string>
+    <string name="gol">GOAL</string>
+    <string name="label_desenvolvido_por">Developed by Joao Lucas</string>
+    <string name="label_titulo">Teams</string>
+    <string name="placar_inicial">0</string>
+</resources>

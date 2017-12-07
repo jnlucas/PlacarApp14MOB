@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PlacarApp</string>
+    <string name="erro_casa">Preencha o Time Casa</string>
+    <string name="erro_visitante">Preencha o Time Visitante</string>
+    <string name="gol">GOL</string>
+    <string name="label_desenvolvido_por">Desenvolvido por Joao Lucas</string>
+    <string name="label_titulo">Times</string>
+    <string name="placar_inicial">0</string>
+</resources>
